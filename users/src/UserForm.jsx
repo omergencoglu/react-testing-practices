@@ -1,17 +1,19 @@
 import { useState } from "react";
 
-export default function UserForm() {
+export default function UserForm({ onUserAdd }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    onUserAdd({ name, email });
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">Name: </label>
         <input
           id="name"
           type="text"
@@ -20,7 +22,7 @@ export default function UserForm() {
         />
       </div>
       <div>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">Email: </label>
         <input
           id="email"
           type="email"
