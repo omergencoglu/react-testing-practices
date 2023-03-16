@@ -18,7 +18,9 @@ test("it shows two inputs and a button", () => {
 test("it calls onUserAdd when the form is submitted", () => {
   // Try to render component
   render(<UserForm />);
+
   // Find the two inputs
+  const inputs = screen.getAllByRole("textbox");
   // Simulate typing in a name
   // Simulate typing in an email
   // Find the button
