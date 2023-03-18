@@ -43,3 +43,20 @@ test("it calls onUserAdd when the form is submitted", () => {
   expect(mock).toHaveBeenCalled();
   expect(mock).toHaveBeenCalledWith({ name: "omer", email: "omer@omer.com" });
 });
+
+test("empties the two inputs when form is submitted", () => {
+  render(<UserForm onUserAdd={() => {}} />);
+
+  const nameInput = screen.getByRole("textbox", { name: /name/i });
+  const emailInput = screen.getByRole("textbox", { name: /email/i });
+  const button = screen.getByRole("button");
+
+  user.click(nameInput);
+  user.keyboard("omer");
+  user.click(emailInput);
+  user.keyboard("omer@omer.com");
+  user.click(button);
+
+  expect(nameInput).toHaveValue("");
+  expect(emailInput).toHaveValue("");
+});
