@@ -12,3 +12,15 @@
 ## TL;DR
 
 This repository includes multiple react projects to practice React testing tools like React Testing Library and Jest.
+
+# Notebooks
+
+There are two notebooks in the rtl-book directory. To run these notebooks navigate to the rtl-book directory and then;
+
+For roles-notes, run the command:
+
+`npx rtl-book serve roles-notes.js`
+
+For query-notes, run the command:
+
+`npx rtl-book serve query-notes.js`
