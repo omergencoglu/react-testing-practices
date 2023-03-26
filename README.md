@@ -15,7 +15,7 @@ This repository includes multiple react projects to practice React testing tools
 
 # Notebooks
 
-There are two notebooks in the rtl-book directory. To run these notebooks navigate to the rtl-book directory and then;
+There are three notebooks in the rtl-book directory. To run these notebooks navigate to the rtl-book directory and then;
 
 For roles-notes, run the command:
 
@@ -24,3 +24,7 @@ For roles-notes, run the command:
 For query-notes, run the command:
 
 `npx rtl-book serve query-notes.js`
+
+For criteria-notes, run the command:
+
+`npx rtl-book serve criteria-notes.js`
