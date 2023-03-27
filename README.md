@@ -13,7 +13,7 @@
 
 This repository includes multiple react projects to practice React testing tools like React Testing Library and Jest.
 
-# Notebooks
+## Notebooks
 
 There are three notebooks in the rtl-book directory. To run these notebooks navigate to the rtl-book directory and then;
 
