@@ -1,13 +1,6 @@
-import { screen, render, act } from "@testing-library/react";
+import { screen, render } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 import RepositoriesListItem from "./RepositoriesListItem";
-
-// jest.mock("../tree/FileIcon", () => {
-//   //Contents of FileIcon.js - get fake output
-//   return () => {
-//     return "File Icon Component";
-//   };
-// });
 
 function renderComponent() {
   const repository = {
@@ -23,22 +16,15 @@ function renderComponent() {
       <RepositoriesListItem repository={repository} />
     </MemoryRouter>
   );
+
+  return { repository };
 }
 
 test("shows a link to github homepage for this repository", async () => {
-  renderComponent();
+  const { repository } = renderComponent();
 
-  await act(async () => {
-    await pause;
-  });
+  await screen.findByRole("img", { name: "Javascript" });
 
-  //   await screen.findByRole("img", { name: "Javascript" });
+  const link = screen.getByRole("link", { name: /github repository/i });
+  expect(link).toHaveAttribute("href", repository.html_url);
 });
-
-const pause = () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, 100);
-  });
-};
